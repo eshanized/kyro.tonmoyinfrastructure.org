@@ -139,7 +139,7 @@ export default function RootLayout({
         name: siteConfig.organization.name,
         url: siteConfig.organization.url,
       },
-      downloadUrl: `${siteConfig.url}/download`,
+      downloadUrl: `${siteConfig.url}/download/`,
       codeRepository: siteConfig.repoUrl,
       license: "https://opensource.org/licenses/MIT",
     },
@@ -172,6 +172,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="Kyro LLM Documentation" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

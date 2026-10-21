@@ -1,0 +1,34 @@
+# Kyro
+
+> Kyro is an open-source, local-first autonomous desktop AI agent built with Tauri v2, Rust native core, and React 19. Architected by Eshan Roy and published by Tonmoy Infrastructure.
+
+Kyro operates with a zero-trust security model, centralized Rust authorization engine, argument-aware command lexing, fail-closed container sandboxing, and direct OS-level computer use across Linux, macOS, and Windows.
+
+## Core Documentation
+
+- [Introduction & Overview](https://kyro.tonmoyinfrastructure.org/docs/): Architectural philosophy, dual experience modes, and verified capability baseline.
+- [Installation Guide](https://kyro.tonmoyinfrastructure.org/docs/installation/): Step-by-step instructions for Linux (.deb, .AppImage), macOS (.dmg), and Windows (.msi, .exe), plus source builds.
+- [Configuration & Models](https://kyro.tonmoyinfrastructure.org/docs/configuration/): Configuring cloud LLMs (Anthropic Claude, OpenAI) and offline local models via Ollama.
+- [Runtime Architecture](https://kyro.tonmoyinfrastructure.org/docs/architecture/): Deep-dive into Tauri v2 IPC, Rust async actor system, and React 19 frontend design.
+- [Zero-Trust Security](https://kyro.tonmoyinfrastructure.org/docs/security/): Centralized authorization engine, path confinement, fail-closed sandboxing, and OS Keyring vault.
+- [Computer Use Subsystem](https://kyro.tonmoyinfrastructure.org/docs/computer-use/): Direct OS GUI automation, mouse coordinates, keyboard input, and safety boundaries.
+- [Browser Automation](https://kyro.tonmoyinfrastructure.org/docs/browser/): Headless and headed Chromium automation via Playwright and Chrome DevTools Protocol.
+- [Developer Workbench](https://kyro.tonmoyinfrastructure.org/docs/developer-workbench/): Embedded terminal, git operations, file manipulation, and isolated project execution.
+- [Everyday Workflows](https://kyro.tonmoyinfrastructure.org/docs/everyday-workflows/): File organization, document summarization, batch media processing, and system maintenance.
+- [MCP Connectors](https://kyro.tonmoyinfrastructure.org/docs/mcp-connectors/): Integration with Model Context Protocol servers (PostgreSQL, GitHub, Filesystem, Memory).
+- [Routines & Telegram](https://kyro.tonmoyinfrastructure.org/docs/routines-telegram/): Autonomous cron-like scheduled routines and secure two-way Telegram remote control.
+- [Troubleshooting Guide](https://kyro.tonmoyinfrastructure.org/docs/troubleshooting/): Diagnostic steps for installation, permissions, Ollama connectivity, and IPC issues.
+
+## Product & Specification
+
+- [Feature Inventory](https://kyro.tonmoyinfrastructure.org/features/): Subsystem breakdown across Dual Modes, Developer Tools, Security, and Computer Use.
+- [Real-World Use Cases](https://kyro.tonmoyinfrastructure.org/use-cases/): Concrete workflows with verified input, action sequences, and verifiable outputs.
+- [Security Specification](https://kyro.tonmoyinfrastructure.org/security/): Technical specification of the centralized Rust security model and zero-telemetry guarantee.
+- [Downloads Center](https://kyro.tonmoyinfrastructure.org/download/): Direct installer packages, verification hashes, and GitHub release artifacts.
+- [Changelog](https://kyro.tonmoyinfrastructure.org/changelog/): Authoritative release history and verified milestone commits.
+- [Frequently Asked Questions](https://kyro.tonmoyinfrastructure.org/faq/): Technical answers to common questions with Schema.org FAQPage structured data.
+- [Contributing Guidelines](https://kyro.tonmoyinfrastructure.org/contributing/): Developer environment setup, Makefile verification pipeline, and commit standards.
+
+## Optional & Extended Reference
+
+- [Full Consolidated Documentation](https://kyro.tonmoyinfrastructure.org/llms-full.txt): Complete, unified single-file technical documentation for LLMs.

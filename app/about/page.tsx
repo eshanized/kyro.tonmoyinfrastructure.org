@@ -230,7 +230,7 @@ export default function AboutPage() {
               <span>Explore GitHub Repository</span>
             </Link>
             <Link
-              href="/contributing"
+              href="/contributing/"
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-2.5 text-xs font-medium text-foreground hover:bg-surface-hover transition-colors"
             >
               <span>Contribution Guide</span>

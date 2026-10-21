@@ -51,7 +51,9 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
                 </h3>
                 <ul className="space-y-1 text-xs sm:text-sm">
                   {section.items.map((item) => {
-                    const isActive = pathname === item.href;
+                    const normalizedPath = pathname.replace(/\/$/, "");
+                    const normalizedHref = item.href.replace(/\/$/, "");
+                    const isActive = normalizedPath === normalizedHref;
                     return (
                       <li key={item.href}>
                         <Link
@@ -75,7 +77,7 @@ export default function DocsLayout({ children }: { children: React.ReactNode }) 
 
             <div className="pt-4 border-t border-border">
               <Link
-                href="/contributing"
+                href="/contributing/"
                 className="flex items-center gap-2 text-xs font-medium text-muted-foreground hover:text-foreground transition-colors px-3 py-1.5 rounded-lg hover:bg-surface-hover"
               >
                 <span>Contribution Guide</span>

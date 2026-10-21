@@ -208,13 +208,13 @@ export default function FeaturesPage() {
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
           <Link
-            href="/download"
+            href="/download/"
             className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400 transition-colors shadow-sm"
           >
             <span>View Downloads</span>
           </Link>
           <Link
-            href="/docs"
+            href="/docs/"
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"
           >
             <span>Documentation</span>

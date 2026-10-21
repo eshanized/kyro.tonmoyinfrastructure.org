@@ -125,10 +125,12 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
             {siteConfig.navItems.map((item) => {
+              const normalizedPath = pathname.replace(/\/$/, "");
+              const normalizedHref = item.href.replace(/\/$/, "");
               const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                normalizedHref === ""
+                  ? normalizedPath === ""
+                  : normalizedPath === normalizedHref || normalizedPath.startsWith(`${normalizedHref}/`);
               return (
                 <Link
                   key={item.href}
@@ -159,7 +161,7 @@ export function Navbar() {
             </Link>
 
             <Link
-              href="/download"
+              href="/download/"
               className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-400 text-black hover:brightness-110 shadow-sm shadow-emerald-500/20 transition-all active:scale-[0.98]"
             >
               <Download className="h-3.5 w-3.5" />
@@ -220,10 +222,12 @@ export function Navbar() {
 
             <div className="flex flex-col gap-1 pb-6">
               {siteConfig.navItems.map((item) => {
+                const normalizedPath = pathname.replace(/\/$/, "");
+                const normalizedHref = item.href.replace(/\/$/, "");
                 const isActive =
-                  item.href === "/"
-                    ? pathname === "/"
-                    : pathname === item.href || pathname.startsWith(`${item.href}/`);
+                  normalizedHref === ""
+                    ? normalizedPath === ""
+                    : normalizedPath === normalizedHref || normalizedPath.startsWith(`${normalizedHref}/`);
                 return (
                   <Link
                     key={item.href}
@@ -243,7 +247,7 @@ export function Navbar() {
 
               <div className="mt-4 pt-4 border-t border-border flex flex-col gap-2.5">
                 <Link
-                  href="/download"
+                  href="/download/"
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-emerald-500 text-black font-semibold text-center hover:bg-emerald-400 transition-colors shadow-sm"
                 >

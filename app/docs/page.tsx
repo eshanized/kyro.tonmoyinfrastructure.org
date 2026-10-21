@@ -68,7 +68,7 @@ make dev`}
 
         <div className="mt-4 flex items-center justify-between text-xs">
           <span className="text-muted-foreground">Looking for pre-compiled binaries?</span>
-          <Link href="/download" className="font-semibold text-emerald-500 hover:text-emerald-400">
+          <Link href="/download/" className="font-semibold text-emerald-500 hover:text-emerald-400">
             View Platform Installers (.deb, .dmg, .msi) →
           </Link>
         </div>
@@ -77,7 +77,7 @@ make dev`}
       {/* Guide Cards Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <Link
-          href="/docs/installation"
+          href="/docs/installation/"
           className="group rounded-xl border border-border bg-surface p-5 hover:border-emerald-500/40 hover:bg-surface-hover transition-all"
         >
           <div className="flex items-center justify-between mb-2">
@@ -91,7 +91,7 @@ make dev`}
         </Link>
 
         <Link
-          href="/docs/configuration"
+          href="/docs/configuration/"
           className="group rounded-xl border border-border bg-surface p-5 hover:border-emerald-500/40 hover:bg-surface-hover transition-all"
         >
           <div className="flex items-center justify-between mb-2">
@@ -105,7 +105,7 @@ make dev`}
         </Link>
 
         <Link
-          href="/docs/security"
+          href="/docs/security/"
           className="group rounded-xl border border-border bg-surface p-5 hover:border-emerald-500/40 hover:bg-surface-hover transition-all"
         >
           <div className="flex items-center justify-between mb-2">
@@ -119,7 +119,7 @@ make dev`}
         </Link>
 
         <Link
-          href="/docs/developer-workbench"
+          href="/docs/developer-workbench/"
           className="group rounded-xl border border-border bg-surface p-5 hover:border-emerald-500/40 hover:bg-surface-hover transition-all"
         >
           <div className="flex items-center justify-between mb-2">
@@ -140,10 +140,10 @@ make dev`}
           These guides reflect the architecture specifications in the Kyro source repository:
         </p>
         <ul className="mt-3 space-y-1 text-xs">
-          <li>• <Link href="/docs/architecture" className="text-emerald-500 hover:underline">Runtime Architecture Overview (`docs/architecture/runtime-overview.md`)</Link></li>
-          <li>• <Link href="/docs/security" className="text-emerald-500 hover:underline">Security Boundaries & Governance (`docs/architecture/security-boundaries.md`)</Link></li>
-          <li>• <Link href="/docs/mcp-connectors" className="text-emerald-500 hover:underline">Connector System & Remote MCP (`docs/architecture/connector-system.md`)</Link></li>
-          <li>• <Link href="/features" className="text-emerald-500 hover:underline">Authoritative Feature Implementation Matrix (`docs/implementation/feature-matrix.md`)</Link></li>
+          <li>• <Link href="/docs/architecture/" className="text-emerald-500 hover:underline">Runtime Architecture Overview (`docs/architecture/runtime-overview.md`)</Link></li>
+          <li>• <Link href="/docs/security/" className="text-emerald-500 hover:underline">Security Boundaries & Governance (`docs/architecture/security-boundaries.md`)</Link></li>
+          <li>• <Link href="/docs/mcp-connectors/" className="text-emerald-500 hover:underline">Connector System & Remote MCP (`docs/architecture/connector-system.md`)</Link></li>
+          <li>• <Link href="/features/" className="text-emerald-500 hover:underline">Authoritative Feature Implementation Matrix (`docs/implementation/feature-matrix.md`)</Link></li>
         </ul>
       </div>
     </div>

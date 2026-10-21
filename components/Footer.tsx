@@ -94,27 +94,27 @@ export function Footer() {
             </h3>
             <ul className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <Link href="/features" className="hover:text-foreground transition-colors">
+                <Link href="/features/" className="hover:text-foreground transition-colors">
                   Features Overview
                 </Link>
               </li>
               <li>
-                <Link href="/use-cases" className="hover:text-foreground transition-colors">
+                <Link href="/use-cases/" className="hover:text-foreground transition-colors">
                   Workflows & Use Cases
                 </Link>
               </li>
               <li>
-                <Link href="/download" className="hover:text-foreground transition-colors">
+                <Link href="/download/" className="hover:text-foreground transition-colors">
                   Downloads & Platforms
                 </Link>
               </li>
               <li>
-                <Link href="/changelog" className="hover:text-foreground transition-colors">
+                <Link href="/changelog/" className="hover:text-foreground transition-colors">
                   Changelog & Releases
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-foreground transition-colors">
+                <Link href="/faq/" className="hover:text-foreground transition-colors">
                   Frequently Asked Questions
                 </Link>
               </li>
@@ -128,27 +128,27 @@ export function Footer() {
             </h3>
             <ul className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground">
               <li>
-                <Link href="/security" className="hover:text-foreground transition-colors">
+                <Link href="/security/" className="hover:text-foreground transition-colors">
                   Security Boundaries
                 </Link>
               </li>
               <li>
-                <Link href="/docs/architecture" className="hover:text-foreground transition-colors">
+                <Link href="/docs/architecture/" className="hover:text-foreground transition-colors">
                   Runtime Architecture
                 </Link>
               </li>
               <li>
-                <Link href="/docs/security" className="hover:text-foreground transition-colors">
+                <Link href="/docs/security/" className="hover:text-foreground transition-colors">
                   Authorization Engine
                 </Link>
               </li>
               <li>
-                <Link href="/docs/mcp-connectors" className="hover:text-foreground transition-colors">
+                <Link href="/docs/mcp-connectors/" className="hover:text-foreground transition-colors">
                   MCP & Connectors
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-foreground transition-colors">
+                <Link href="/privacy/" className="hover:text-foreground transition-colors">
                   Privacy Policy
                 </Link>
               </li>
@@ -184,12 +184,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <Link href="/about" className="hover:text-foreground transition-colors">
+                <Link href="/about/" className="hover:text-foreground transition-colors">
                   About Kyro & Mission
                 </Link>
               </li>
               <li>
-                <Link href="/contributing" className="hover:text-foreground transition-colors">
+                <Link href="/contributing/" className="hover:text-foreground transition-colors">
                   Contribution Guide
                 </Link>
               </li>
@@ -199,7 +199,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="hover:text-foreground transition-colors">
+                <Link href="/terms/" className="hover:text-foreground transition-colors">
                   Terms of Use
                 </Link>
               </li>
@@ -210,16 +210,16 @@ export function Footer() {
         <div className="mt-12 border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Eshan Roy • Tonmoy Infrastructure. Released under the MIT License.</p>
           <div className="flex items-center gap-4">
-            <Link href="/about" className="hover:text-foreground transition-colors">
+            <Link href="/about/" className="hover:text-foreground transition-colors">
               About
             </Link>
-            <Link href="/security" className="hover:text-foreground transition-colors">
+            <Link href="/security/" className="hover:text-foreground transition-colors">
               Security
             </Link>
-            <Link href="/privacy" className="hover:text-foreground transition-colors">
+            <Link href="/privacy/" className="hover:text-foreground transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">
+            <Link href="/terms/" className="hover:text-foreground transition-colors">
               Terms
             </Link>
           </div>

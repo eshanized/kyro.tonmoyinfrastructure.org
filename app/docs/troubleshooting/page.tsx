@@ -121,7 +121,7 @@ podman machine start`}
             <span>Open GitHub Issue</span>
           </Link>
           <Link
-            href="/faq"
+            href="/faq/"
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2 text-xs font-medium text-foreground hover:bg-surface-hover transition-colors"
           >
             <span>Read FAQ</span>

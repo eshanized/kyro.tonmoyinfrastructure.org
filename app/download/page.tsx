@@ -171,7 +171,7 @@ export default async function DownloadPage() {
               We are finalizing notarization and platform packaging. In the meantime, macOS users can compile and run Kyro directly from source.
             </p>
             <Link
-              href="/docs/installation"
+              href="/docs/installation/"
               className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-surface px-3 py-2 text-xs font-medium text-foreground hover:bg-surface-hover hover:border-emerald-500/40 transition-colors"
             >
               <span>Build from source on macOS</span>
@@ -207,7 +207,7 @@ export default async function DownloadPage() {
               We are finalizing Windows code signing and packaging. In the meantime, Windows users can compile and run Kyro directly from source.
             </p>
             <Link
-              href="/docs/installation"
+              href="/docs/installation/"
               className="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg border border-border bg-surface px-3 py-2 text-xs font-medium text-foreground hover:bg-surface-hover hover:border-emerald-500/40 transition-colors"
             >
               <span>Build from source on Windows</span>
@@ -263,7 +263,7 @@ make tauri-build`}
               <span>Installers output to: <code className="text-foreground">libkyro/target/release/bundle/</code></span>
             </div>
             <Link
-              href="/docs/installation"
+              href="/docs/installation/"
               className="inline-flex items-center gap-1.5 font-semibold text-emerald-500 hover:text-emerald-400"
             >
               <span>View OS-specific prerequisites</span>

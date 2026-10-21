@@ -25,14 +25,14 @@ export default function NotFound() {
           <span>Return Home</span>
         </Link>
         <Link
-          href="/docs"
+          href="/docs/"
           className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"
         >
           <BookOpen className="h-4 w-4 text-emerald-500" />
           <span>Browse Docs</span>
         </Link>
         <Link
-          href="/download"
+          href="/download/"
           className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"
         >
           <Download className="h-4 w-4" />
@@ -46,22 +46,22 @@ export default function NotFound() {
         </h2>
         <ul className="space-y-2 text-sm">
           <li>
-            <Link href="/features" className="text-emerald-500 hover:underline">
+            <Link href="/features/" className="text-emerald-500 hover:underline">
               → Features & Subsystem Overview
             </Link>
           </li>
           <li>
-            <Link href="/security" className="text-emerald-500 hover:underline">
+            <Link href="/security/" className="text-emerald-500 hover:underline">
               → Zero-Trust Security & Policy Matrix
             </Link>
           </li>
           <li>
-            <Link href="/use-cases" className="text-emerald-500 hover:underline">
+            <Link href="/use-cases/" className="text-emerald-500 hover:underline">
               → Everyday & Developer Workflows
             </Link>
           </li>
           <li>
-            <Link href="/faq" className="text-emerald-500 hover:underline">
+            <Link href="/faq/" className="text-emerald-500 hover:underline">
               → Frequently Asked Questions
             </Link>
           </li>

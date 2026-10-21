@@ -110,7 +110,7 @@ export default function HomePage() {
             {/* Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
               <Link
-                href="/download"
+                href="/download/"
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-md shadow-emerald-500/25 active:scale-[0.98]"
               >
                 <Download className="h-4 w-4" />
@@ -118,7 +118,7 @@ export default function HomePage() {
               </Link>
 
               <Link
-                href="/features"
+                href="/features/"
                 className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-6 py-3.5 text-sm font-semibold text-foreground hover:bg-surface-hover hover:border-emerald-500/30 transition-all active:scale-[0.98]"
               >
                 <span>Explore Features</span>
@@ -191,7 +191,7 @@ export default function HomePage() {
                     <span className="hidden sm:inline text-gray-400">— Everyday Mode & Step Timeline</span>
                   </div>
                   <Link
-                    href="/features"
+                    href="/features/"
                     className="inline-flex items-center gap-1 text-emerald-400 hover:underline font-semibold"
                   >
                     <span>View all modules</span>
@@ -345,7 +345,7 @@ export default function HomePage() {
                   <span>GitHub @eshanized</span>
                 </a>
                 <Link
-                  href="/about"
+                  href="/about/"
                   className="text-xs font-semibold text-emerald-400 hover:underline"
                 >
                   Read full story →
@@ -373,7 +373,7 @@ export default function HomePage() {
               </p>
               <div className="mt-5">
                 <Link
-                  href="/security"
+                  href="/security/"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
                   <span>Read our Security & Governance architecture</span>
@@ -502,7 +502,7 @@ export default function HomePage() {
 
               <div className="mt-8">
                 <Link
-                  href="/use-cases#file-organization-cleanup"
+                  href="/use-cases/#file-organization-cleanup"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
                   <span>Explore everyday use cases</span>
@@ -595,7 +595,7 @@ export default function HomePage() {
 
               <div className="mt-8">
                 <Link
-                  href="/use-cases#web-ui-visual-regression"
+                  href="/use-cases/#web-ui-visual-regression"
                   className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
                 >
                   <span>Explore developer workflows</span>
@@ -709,14 +709,14 @@ export default function HomePage() {
 
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-                href="/security"
+                href="/security/"
                 className="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-4 py-2.5 text-xs sm:text-sm font-semibold text-black hover:bg-emerald-400 transition-colors shadow-sm"
               >
                 <span>Read Full Security Specification</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/docs/security"
+                href="/docs/security/"
                 className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"
               >
                 <span>Security Boundaries Documentation</span>
@@ -742,7 +742,7 @@ export default function HomePage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                href="/docs/installation"
+                href="/docs/installation/"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 transition-colors"
               >
                 <span>View complete build prerequisites</span>
@@ -750,7 +750,7 @@ export default function HomePage() {
               </Link>
               <span className="text-border">•</span>
               <Link
-                href="/contributing"
+                href="/contributing/"
                 className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
               >
                 <span>Contribution Guide</span>
@@ -839,14 +839,14 @@ make dev`}
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
-              href="/download"
+              href="/download/"
               className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20"
             >
               <Download className="h-4 w-4" />
               <span>Get Kyro v{siteConfig.currentVersion}</span>
             </Link>
             <Link
-              href="/docs"
+              href="/docs/"
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-6 py-3.5 text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"
             >
               <span>Read Documentation</span>
