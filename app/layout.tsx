@@ -10,14 +10,16 @@ const firaSans = Fira_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
 const monoFont = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   display: "swap",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500"],
+  preload: false,
 });
 
 export const viewport: Viewport = {
@@ -165,6 +167,22 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <link rel="preconnect" href="https://avatars.githubusercontent.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/screenshot_1-mobile.webp"
+          type="image/webp"
+          media="(max-width: 640px)"
+        />
+        <link
+          rel="preload"
+          as="image"
+          href="/assets/screenshot_1.webp"
+          type="image/webp"
+          media="(min-width: 641px)"
+        />
         <link rel="alternate" type="text/markdown" href="/llms.txt" title="Kyro LLM Documentation" />
         <script
           type="application/ld+json"

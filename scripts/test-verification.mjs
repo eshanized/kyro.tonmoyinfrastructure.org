@@ -71,6 +71,15 @@ const requiredAssets = [
   "public/assets/screenshot_6.png",
   "public/assets/screenshot_7.png",
   "public/assets/screenshot_8.png",
+  "public/assets/screenshot_1.webp",
+  "public/assets/screenshot_1-mobile.webp",
+  "public/assets/screenshot_2.webp",
+  "public/assets/screenshot_3.webp",
+  "public/assets/screenshot_4.webp",
+  "public/assets/screenshot_5.webp",
+  "public/assets/screenshot_6.webp",
+  "public/assets/screenshot_7.webp",
+  "public/assets/screenshot_8.webp",
 ];
 
 for (const asset of requiredAssets) {

@@ -44,11 +44,11 @@ export default async function HomePage() {
       <section className="relative overflow-hidden pt-12 md:pt-20 lg:pt-24 bg-dot-pattern">
         {/* Ambient atmospheric glows */}
         <div
-          className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/2 h-[550px] w-[750px] rounded-full bg-emerald-500/12 blur-[140px]"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/2 h-[350px] sm:h-[550px] w-[450px] sm:w-[750px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,221,123,0.15)_0%,rgba(0,221,123,0.05)_50%,transparent_70%)] blur-2xl sm:blur-3xl"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute right-10 top-40 -z-10 h-[300px] w-[350px] rounded-full bg-cyan-500/10 blur-[120px]"
+          className="pointer-events-none absolute right-10 top-40 -z-10 h-[200px] sm:h-[300px] w-[250px] sm:w-[350px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(56,189,248,0.12)_0%,transparent_70%)] blur-xl sm:blur-2xl"
           aria-hidden="true"
         />
 
@@ -183,14 +183,27 @@ export default async function HomePage() {
               </div>
 
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-lg border border-border/60 bg-black">
-                <Image
-                  src="/assets/screenshot_1.png"
-                  alt="Kyro Everyday Mode Application Interface with Dual Experience Selector and Live Execution Timeline"
-                  fill
-                  priority
-                  className="object-cover object-top"
-                  sizes="(max-width: 1200px) 100vw, 1200px"
-                />
+                <picture className="block h-full w-full">
+                  <source
+                    media="(max-width: 640px)"
+                    type="image/webp"
+                    srcSet="/assets/screenshot_1-mobile.webp"
+                  />
+                  <source
+                    type="image/webp"
+                    srcSet="/assets/screenshot_1.webp"
+                  />
+                  <img
+                    src="/assets/screenshot_1.png"
+                    alt="Kyro Everyday Mode Application Interface with Dual Experience Selector and Live Execution Timeline"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    width={1886}
+                    height={1016}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </picture>
                 <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-lg bg-black/85 px-4 py-2.5 backdrop-blur-md border border-border/60 text-xs text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -520,7 +533,7 @@ export default async function HomePage() {
 
             <div className="relative aspect-[16/10] rounded-xl overflow-hidden border border-border bg-black shadow-lg">
               <Image
-                src="/assets/screenshot_3.png"
+                src="/assets/screenshot_3.webp"
                 alt="Kyro Safe Reversible File Organizer Interface"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -538,7 +551,7 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-6 sm:p-10">
             <div className="order-2 lg:order-1 relative aspect-[16/10] rounded-xl overflow-hidden border border-border bg-black shadow-lg">
               <Image
-                src="/assets/screenshot_2.png"
+                src="/assets/screenshot_2.webp"
                 alt="Kyro Developer Workbench with Managed Dev Servers and Port Status"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

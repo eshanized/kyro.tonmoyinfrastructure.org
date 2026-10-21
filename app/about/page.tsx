@@ -46,11 +46,11 @@ export default function AboutPage() {
     <div className="relative overflow-hidden">
       {/* Ambient background lighting */}
       <div
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/3 h-[600px] w-[800px] rounded-full bg-emerald-500/10 blur-[150px]"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 -translate-y-1/3 h-[400px] sm:h-[600px] w-[500px] sm:w-[800px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,221,123,0.12)_0%,transparent_70%)] blur-2xl sm:blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-96 -z-10 h-[450px] w-[450px] rounded-full bg-[#E5484D]/8 blur-[160px]"
+        className="pointer-events-none absolute right-0 top-96 -z-10 h-[300px] sm:h-[450px] w-[300px] sm:w-[450px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(229,72,77,0.1)_0%,transparent_70%)] blur-2xl sm:blur-3xl"
         aria-hidden="true"
       />
 
@@ -584,7 +584,7 @@ export default function AboutPage() {
         {/* Open Source Commitment & CTA Banner */}
         <div className="mt-16 sm:mt-24 rounded-2xl border border-border bg-gradient-to-b from-card via-surface to-background p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden">
           <div
-            className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 h-[300px] w-[500px] rounded-full bg-emerald-500/10 blur-[100px]"
+            className="pointer-events-none absolute left-1/2 top-0 -z-10 -translate-x-1/2 h-[300px] w-[500px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(0,221,123,0.12)_0%,transparent_70%)] blur-2xl sm:blur-3xl"
             aria-hidden="true"
           />
 

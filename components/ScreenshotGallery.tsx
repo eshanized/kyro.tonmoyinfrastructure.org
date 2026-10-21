@@ -17,7 +17,7 @@ export interface ScreenshotItem {
 export const screenshotsList: ScreenshotItem[] = [
   {
     id: "screenshot-1",
-    src: "/assets/screenshot_1.png",
+    src: "/assets/screenshot_1.webp",
     title: "Everyday Mode & Interactive Assistant",
     category: "everyday",
     categoryLabel: "Everyday Mode",
@@ -27,7 +27,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-2",
-    src: "/assets/screenshot_2.png",
+    src: "/assets/screenshot_2.webp",
     title: "Developer Workbench & Process Lifecycle",
     category: "developer",
     categoryLabel: "Developer Workbench",
@@ -37,7 +37,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-3",
-    src: "/assets/screenshot_3.png",
+    src: "/assets/screenshot_3.webp",
     title: "Safe Reversible File Organizer",
     category: "everyday",
     categoryLabel: "Everyday Mode",
@@ -47,7 +47,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-4",
-    src: "/assets/screenshot_4.png",
+    src: "/assets/screenshot_4.webp",
     title: "Local-First Document Assistant",
     category: "everyday",
     categoryLabel: "Everyday Mode",
@@ -57,7 +57,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-5",
-    src: "/assets/screenshot_5.png",
+    src: "/assets/screenshot_5.webp",
     title: "Multimodal Screen Explainer",
     category: "everyday",
     categoryLabel: "Everyday Mode",
@@ -67,7 +67,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-6",
-    src: "/assets/screenshot_6.png",
+    src: "/assets/screenshot_6.webp",
     title: "Teach-a-Task & Routine Scheduler",
     category: "system",
     categoryLabel: "System & Routines",
@@ -77,7 +77,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-7",
-    src: "/assets/screenshot_7.png",
+    src: "/assets/screenshot_7.webp",
     title: "Connections & MCP Integration Center",
     category: "system",
     categoryLabel: "System & Routines",
@@ -87,7 +87,7 @@ export const screenshotsList: ScreenshotItem[] = [
   },
   {
     id: "screenshot-8",
-    src: "/assets/screenshot_8.png",
+    src: "/assets/screenshot_8.webp",
     title: "Multi-Agent Git Worktree Workspace",
     category: "developer",
     categoryLabel: "Developer Workbench",
