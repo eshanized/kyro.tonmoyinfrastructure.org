@@ -11,7 +11,21 @@ export const faqItems: FaqItem[] = [
     category: "General",
     question: "What is Kyro?",
     answer:
-      "Kyro is a local-first autonomous desktop AI agent built with a multi-threaded Rust native core (Tauri v2) and React 19. It runs directly on your personal computer, combining screen understanding, browser automation, terminal execution, and Model Context Protocol (MCP) integrations with strict, centralized governance.",
+      "Kyro is an open-source, local-first autonomous desktop AI agent built with a multi-threaded Rust native core (Tauri v2) and React 19. It runs directly on your personal computer, combining screen understanding, browser automation, terminal execution, and Model Context Protocol (MCP) integrations with strict, centralized governance.",
+  },
+  {
+    id: "who-owns-kyro",
+    category: "General",
+    question: "Who owns and develops Kyro?",
+    answer:
+      "Kyro is a product from Tonmoy Infrastructure (https://tonmoyinfrastructure.org/) and is owned and architected by Eshan Roy (m.eshanized@gmail.com, https://github.com/eshanized). The project is developed openly with community contributors under the MIT License.",
+  },
+  {
+    id: "what-is-tonmoy-infrastructure",
+    category: "General",
+    question: "What is Tonmoy Infrastructure?",
+    answer:
+      "Tonmoy Infrastructure (https://tonmoyinfrastructure.org/) is an infrastructure research and product organization focused on building sovereign, privacy-preserving systems, distributed tools, and local-first computing platforms that return digital ownership to developers and individuals.",
   },
   {
     id: "who-is-it-for",

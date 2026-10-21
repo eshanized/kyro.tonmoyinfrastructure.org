@@ -18,14 +18,32 @@ export default function ContributingPage() {
       <Breadcrumbs items={[{ label: "Contributing" }]} />
 
       <div className="max-w-3xl">
-        <span className="text-xs font-semibold uppercase tracking-wider text-emerald-500">
-          Open Source Collaboration
-        </span>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 mb-3">
+          <span>Tonmoy Infrastructure • Owned by Eshan Roy</span>
+        </div>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Contributing to Kyro
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-          We welcome contributions from developers, designers, technical writers, and testers of all skill levels.
+          Kyro is an open-source product from{" "}
+          <a
+            href={siteConfig.organization.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 font-semibold underline hover:text-emerald-300"
+          >
+            Tonmoy Infrastructure
+          </a>
+          , owned and architected by{" "}
+          <a
+            href={siteConfig.owner.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground font-semibold underline hover:text-emerald-400"
+          >
+            Eshan Roy
+          </a>
+          . We welcome contributions from developers, designers, technical writers, and testers of all skill levels.
           Follow this guide to set up your environment, run checks, and submit pull requests.
         </p>
       </div>

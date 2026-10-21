@@ -9,47 +9,47 @@
 @layer base {
   :root {
     color-scheme: dark;
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #090a0f;
+    --foreground: #f3f4f6;
 
-    --surface: #121212;
-    --surface-secondary: #171717;
-    --surface-elevated: #1a1a1a;
-    --surface-hover: #222222;
+    --surface: #11131a;
+    --surface-secondary: #171a23;
+    --surface-elevated: #1e222f;
+    --surface-hover: #262b3b;
 
-    --card: #121212;
-    --card-foreground: #ededed;
+    --card: #11131a;
+    --card-foreground: #f3f4f6;
 
-    --border: #262626;
-    --border-subtle: #1e1e1e;
-    --border-hover: #383838;
+    --border: #232735;
+    --border-subtle: #191c28;
+    --border-hover: #3b4259;
 
-    --muted: #171717;
-    --muted-foreground: #a1a1a1;
+    --muted: #171a23;
+    --muted-foreground: #9ca3af;
 
     --accent: #00dd7b;
-    --accent-glow: rgba(0, 221, 123, 0.15);
+    --accent-glow: rgba(0, 221, 123, 0.18);
   }
 
   .light {
     color-scheme: light;
     --background: #ffffff;
-    --foreground: #171717;
+    --foreground: #111827;
 
-    --surface: #fafafa;
-    --surface-secondary: #f5f5f5;
-    --surface-elevated: #eeeeee;
-    --surface-hover: #eaeaea;
+    --surface: #f9fafb;
+    --surface-secondary: #f3f4f6;
+    --surface-elevated: #e5e7eb;
+    --surface-hover: #e5e7eb;
 
     --card: #ffffff;
-    --card-foreground: #171717;
+    --card-foreground: #111827;
 
-    --border: #e5e5e5;
-    --border-subtle: #f0f0f0;
-    --border-hover: #d4d4d4;
+    --border: #e5e7eb;
+    --border-subtle: #f3f4f6;
+    --border-hover: #d1d5db;
 
-    --muted: #f5f5f5;
-    --muted-foreground: #666666;
+    --muted: #f3f4f6;
+    --muted-foreground: #4b5563;
 
     --accent: #00884a;
     --accent-glow: rgba(0, 136, 74, 0.12);
@@ -99,7 +99,51 @@
   }
 
   .glow-accent {
-    box-shadow: 0 0 25px -5px rgba(0, 221, 123, 0.25);
+    box-shadow: 0 0 35px -5px rgba(0, 221, 123, 0.3);
+  }
+
+  .glow-box-subtle {
+    box-shadow: 0 0 20px -3px rgba(0, 221, 123, 0.15);
+  }
+
+  .bg-dot-pattern {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .light .bg-dot-pattern {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .glass-panel {
+    background: rgba(17, 19, 26, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .light .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .gradient-text-emerald {
+    background: linear-gradient(135deg, #00ff8d 0%, #00dd7b 50%, #38bdf8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .gradient-border-card {
+    position: relative;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .gradient-border-card:hover {
+    box-shadow: 0 8px 30px -10px rgba(0, 221, 123, 0.18);
   }
 }
 

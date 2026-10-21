@@ -38,13 +38,31 @@ export default async function DownloadPage() {
       <div className="max-w-3xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 mb-4">
           <Download className="h-3.5 w-3.5" />
-          <span>Official Distribution Channels</span>
+          <span>Official Distribution Channels • Tonmoy Infrastructure</span>
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Get Kyro for Your Platform
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-          Kyro is currently available for Linux-based distributions (.deb and standalone .AppImage).
+          Kyro is an open-source product from{" "}
+          <a
+            href={siteConfig.organization.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 font-semibold underline hover:text-emerald-300"
+          >
+            Tonmoy Infrastructure
+          </a>
+          , owned by{" "}
+          <a
+            href={siteConfig.owner.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground font-semibold underline hover:text-emerald-400"
+          >
+            Eshan Roy
+          </a>
+          . It is currently available for Linux-based distributions (.deb and standalone .AppImage).
           Native pre-built installers for macOS and Windows are in active development and coming soon.
           Developers on any platform can compile from source today using Rust and Node.js.
         </p>

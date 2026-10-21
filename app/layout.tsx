@@ -29,7 +29,7 @@ const monoFont = JetBrains_Mono({
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" },
+    { media: "(prefers-color-scheme: dark)", color: "#090a0f" },
     { media: "(prefers-color-scheme: light)", color: "#ffffff" },
   ],
   width: "device-width",
@@ -38,6 +38,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  alternates: {
+    canonical: "./",
+  },
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
@@ -45,6 +48,8 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "Kyro",
+    "Tonmoy Infrastructure",
+    "Eshan Roy",
     "desktop AI agent",
     "autonomous desktop agent",
     "local-first AI",
@@ -57,9 +62,12 @@ export const metadata: Metadata = {
     "developer workbench",
     "zero-trust security",
   ],
-  authors: [{ name: siteConfig.author.name, url: siteConfig.author.github }],
-  creator: siteConfig.author.name,
-  publisher: siteConfig.name,
+  authors: [
+    { name: siteConfig.owner.name, url: siteConfig.owner.github },
+    { name: siteConfig.organization.name, url: siteConfig.organization.url },
+  ],
+  creator: siteConfig.owner.name,
+  publisher: siteConfig.organization.name,
   robots: {
     index: true,
     follow: true,
@@ -123,8 +131,13 @@ export default function RootLayout({
       softwareVersion: siteConfig.currentVersion,
       author: {
         "@type": "Person",
-        name: siteConfig.author.name,
-        url: siteConfig.author.github,
+        name: siteConfig.owner.name,
+        url: siteConfig.owner.github,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.organization.name,
+        url: siteConfig.organization.url,
       },
       downloadUrl: `${siteConfig.url}/download`,
       codeRepository: siteConfig.repoUrl,
@@ -132,10 +145,23 @@ export default function RootLayout({
     },
     {
       "@context": "https://schema.org",
+      "@type": "Organization",
+      name: siteConfig.organization.name,
+      url: siteConfig.organization.url,
+      logo: `${siteConfig.url}/logo.svg`,
+      description: siteConfig.organization.description,
+    },
+    {
+      "@context": "https://schema.org",
       "@type": "WebSite",
       name: siteConfig.name,
       url: siteConfig.url,
       description: siteConfig.description,
+      publisher: {
+        "@type": "Organization",
+        name: siteConfig.organization.name,
+        url: siteConfig.organization.url,
+      },
     },
   ];
 

@@ -17,16 +17,33 @@ export default function DocsHomePage() {
       <Breadcrumbs items={[{ label: "Docs", href: "/docs" }, { label: "Overview" }]} />
 
       <div>
-        <span className="text-xs font-semibold uppercase tracking-wider text-emerald-500">
-          Kyro Documentation
-        </span>
-        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-400 mb-3">
+          <span>Tonmoy Infrastructure • Owned by Eshan Roy</span>
+        </div>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
           Introduction & Architectural Overview
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
           Welcome to the authoritative documentation for Kyro. Kyro is an open-source, local-first autonomous
-          desktop AI agent developed by Eshan Roy and community contributors. It unites high-speed Rust native
-          execution with Tauri v2 and React 19 to provide seamless computer control, browser automation, and developer tooling.
+          desktop AI agent from{" "}
+          <a
+            href={siteConfig.organization.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 font-semibold underline hover:text-emerald-300"
+          >
+            Tonmoy Infrastructure
+          </a>
+          , owned and architected by{" "}
+          <a
+            href={siteConfig.owner.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground font-semibold underline hover:text-emerald-400"
+          >
+            Eshan Roy
+          </a>{" "}
+          with community contributors. It unites high-speed Rust native execution with Tauri v2 and React 19 to provide seamless computer control, browser automation, and developer tooling.
         </p>
       </div>
 

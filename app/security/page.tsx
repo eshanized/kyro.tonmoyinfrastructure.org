@@ -32,14 +32,32 @@ export default function SecurityPage() {
       <div className="max-w-3xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 mb-4">
           <Shield className="h-3.5 w-3.5" />
-          <span>Zero-Trust Architecture Specification</span>
+          <span>Zero-Trust Architecture • Tonmoy Infrastructure</span>
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl md:text-5xl">
           Security Boundaries & Control Architecture
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
           Allowing an autonomous AI agent to interact with your operating system requires strict, verifiable boundaries.
-          Kyro is built with a zero-implicit-approval philosophy: every consequential action is evaluated and authorized
+          Kyro is an open-source product from{" "}
+          <a
+            href={siteConfig.organization.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 font-semibold underline hover:text-emerald-300"
+          >
+            Tonmoy Infrastructure
+          </a>
+          , owned and architected by{" "}
+          <a
+            href={siteConfig.owner.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground font-semibold underline hover:text-emerald-400"
+          >
+            Eshan Roy
+          </a>
+          . It is engineered with a zero-implicit-approval philosophy: every consequential action is evaluated and authorized
           at the native Rust backend execution gate.
         </p>
       </div>
