@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Kyro Desktop Core Application Issues
+    url: https://github.com/eshanized/Kyro/issues
+    about: Please report core Kyro application bugs, Tauri/Rust backend issues, or engine questions in the main product repository.
+  - name: Kyro Live Documentation
+    url: https://kyro.tonmoyinfrastructure.org/docs
+    about: Read the official documentation guides, security specifications, and workflows.

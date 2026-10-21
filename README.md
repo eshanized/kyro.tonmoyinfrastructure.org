@@ -1,10 +1,20 @@
 # Kyro Product Website (`kyro.tonmoyinfrastructure.org`)
 
+<p align="left">
+  <a href="https://github.com/eshanized/kyro.tonmoyinfrastructure.org/actions/workflows/deploy.yml"><img src="https://github.com/eshanized/kyro.tonmoyinfrastructure.org/actions/workflows/deploy.yml/badge.svg" alt="Deploy to GitHub Pages" /></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-00dd7b.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Next.js-16-black?logo=next.js" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19" />
+  <img src="https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <a href="https://kyro.tonmoyinfrastructure.org"><img src="https://img.shields.io/badge/Live-kyro.tonmoyinfrastructure.org-00dd7b?logo=googlechrome&logoColor=white" alt="Live Website" /></a>
+</p>
+
 The official marketing and technical documentation website for **Kyro**, a local-first autonomous desktop AI agent built with Tauri v2, Rust native core, and React 19.
 
-- **Production Domain:** https://kyro.tonmoyinfrastructure.org
-- **Kyro Product Repository:** https://github.com/eshanized/Kyro
-- **License:** MIT License
+- **Production Domain:** [kyro.tonmoyinfrastructure.org](https://kyro.tonmoyinfrastructure.org)
+- **Kyro Product Repository:** [eshanized/Kyro](https://github.com/eshanized/Kyro)
+- **License:** [MIT License](LICENSE)
 
 ---
 

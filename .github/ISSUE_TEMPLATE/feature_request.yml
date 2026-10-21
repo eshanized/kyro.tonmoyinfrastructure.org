@@ -1,0 +1,36 @@
+name: Feature Request
+description: Suggest an enhancement or new feature for the Kyro website or documentation
+title: "[Feature]: "
+labels: ["type: enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea to improve **kyro.tonmoyinfrastructure.org** or add new documentation guides? Share your proposal below.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a specific challenge, gap, or missing documentation?
+      placeholder: Describe the motivation behind this request...
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Enhancement
+      description: Describe your proposed addition, layout improvement, or content change.
+      placeholder: Detailed description of what should be added or changed...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Have you considered any alternative solutions or designs?
+  - type: checkboxes
+    id: contributing
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to submit a pull request to implement this feature
