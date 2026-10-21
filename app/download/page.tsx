@@ -16,6 +16,7 @@ import { siteConfig } from "@/lib/site-config";
 import { getLatestRelease } from "@/lib/releases";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
+import { MarkdownRenderer } from "@/components/MarkdownRenderer";
 
 export const metadata: Metadata = {
   title: "Download Kyro Desktop Client",
@@ -113,9 +114,9 @@ export default async function DownloadPage() {
       </div>
 
       {/* Platform Cards Grid */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* Linux */}
-        <div className="flex flex-col rounded-2xl border border-emerald-500/40 bg-card p-6 sm:p-7 shadow-lg shadow-emerald-500/5 transition-all">
+        <div className="flex flex-col md:col-span-2 lg:col-span-1 rounded-2xl border border-emerald-500/40 bg-card p-6 sm:p-7 shadow-lg shadow-emerald-500/5 transition-all">
           <div className="flex items-center justify-between mb-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
               <HardDrive className="h-5 w-5" />
@@ -287,9 +288,34 @@ make tauri-build`}
 
       {/* Release Notes */}
       <section className="mt-16 border-t border-border pt-12">
-        <h2 className="text-xl font-bold text-foreground">Release Notes for {release.tagName}</h2>
-        <div className="mt-4 rounded-xl border border-border bg-surface p-6 text-xs sm:text-sm text-muted-foreground leading-relaxed whitespace-pre-line font-sans">
-          {release.notes}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
+              Release Notes for {release.tagName}
+            </h2>
+            <p className="text-xs text-muted-foreground mt-1">
+              Official release notes published on{" "}
+              <time dateTime={release.publishedAt}>
+                {new Date(release.publishedAt).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            </p>
+          </div>
+          <a
+            href={release.htmlUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors"
+          >
+            <span>View release on GitHub</span>
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
+        <div className="rounded-2xl border border-border bg-surface/80 p-6 sm:p-8 backdrop-blur-xs shadow-xs">
+          <MarkdownRenderer content={release.notes} />
         </div>
       </section>
     </div>
