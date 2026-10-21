@@ -89,6 +89,7 @@ const dataFiles = [
   "lib/feature-catalog.ts",
   "lib/use-cases-data.ts",
   "lib/changelog-data.ts",
+  "lib/contributors.ts",
 ];
 
 for (const df of dataFiles) {

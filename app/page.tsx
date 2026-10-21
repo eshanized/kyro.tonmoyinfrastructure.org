@@ -25,11 +25,14 @@ import {
   Zap,
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { getContributors } from "@/lib/contributors";
 import { ScreenshotGallery } from "@/components/ScreenshotGallery";
 import { CodeBlock } from "@/components/CodeBlock";
 import { GithubIcon } from "@/components/BrandIcons";
+import { HeroContributors } from "@/components/HeroContributors";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const contributors = await getContributors();
   return (
     <div className="flex flex-col gap-20 pb-20 sm:gap-28 sm:pb-28">
       {/* Hero Section */}
@@ -137,8 +140,13 @@ export default function HomePage() {
               </Link>
             </div>
 
+            {/* GitHub Contributors */}
+            <div className="mt-6 flex justify-center">
+              <HeroContributors initialContributors={contributors} />
+            </div>
+
             {/* Operating System badges */}
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-400">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
                 Linux (.deb, .AppImage) — Available Now
