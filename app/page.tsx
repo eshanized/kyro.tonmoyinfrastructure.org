@@ -91,19 +91,19 @@ export default function HomePage() {
 
             {/* Operating System badges */}
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-              <span className="inline-flex items-center gap-1.5">
+              <span className="inline-flex items-center gap-1.5 font-medium text-emerald-400">
                 <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                Linux (.deb, .AppImage)
+                Linux (.deb, .AppImage) — Available Now
               </span>
               <span className="text-border">•</span>
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                macOS (Apple Silicon & Intel .dmg)
+              <span className="inline-flex items-center gap-1.5 text-muted-foreground/80">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                macOS (Coming Soon)
               </span>
               <span className="text-border">•</span>
-              <span className="inline-flex items-center gap-1.5">
-                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                Windows 10/11 (.msi, .exe)
+              <span className="inline-flex items-center gap-1.5 text-muted-foreground/80">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+                Windows (Coming Soon)
               </span>
             </div>
 

@@ -81,7 +81,7 @@ export const faqItems: FaqItem[] = [
     category: "Platforms & Technical",
     question: "Which operating systems and architectures are supported?",
     answer:
-      "Kyro provides official builds for Linux (x86_64 Debian/Ubuntu .deb and universal .AppImage), macOS (Apple Silicon aarch64 M1-M4 and Intel x86_64 .dmg), and Windows 10/11 (64-bit .msi and .exe). Linux installations require standard desktop runtime libraries (webkit2gtk-4.1, libxdo, libssl). Full build-from-source instructions using Cargo and npm are also provided.",
+      "For now, Kyro is available for Linux-based distributions (x86_64 Debian/Ubuntu .deb and universal .AppImage). Official pre-built installers for macOS (Apple Silicon & Intel .dmg) and Windows 10/11 (.msi and .exe) are in active progress and coming soon. In the meantime, developers on macOS and Windows can compile and run Kyro directly from source using Cargo and Node.js.",
   },
   {
     id: "how-to-contribute",

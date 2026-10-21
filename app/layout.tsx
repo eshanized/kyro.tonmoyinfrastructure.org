@@ -113,7 +113,7 @@ export default function RootLayout({
       "@type": "SoftwareApplication",
       name: "Kyro",
       applicationCategory: "DeveloperApplication",
-      operatingSystem: "Linux, macOS, Windows",
+      operatingSystem: "Linux (macOS and Windows coming soon)",
       offers: {
         "@type": "Offer",
         price: "0",

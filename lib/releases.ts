@@ -6,6 +6,7 @@ export interface ReleaseAsset {
   downloadUrl: string;
   sizeBytes?: number;
   description: string;
+  status: "available" | "coming-soon";
 }
 
 export interface ReleaseInfo {
@@ -48,6 +49,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       format: "deb",
       downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/kyro_0.1.0_amd64.deb",
       description: "Debian, Ubuntu, Linux Mint & derivatives (64-bit)",
+      status: "available",
     },
     {
       name: "kyro_0.1.0_amd64.AppImage",
@@ -56,38 +58,43 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       format: "appimage",
       downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/kyro_0.1.0_amd64.AppImage",
       description: "Universal standalone Linux executable (Arch, Fedora, openSUSE, etc.)",
+      status: "available",
     },
     {
       name: "Kyro_0.1.0_aarch64.dmg",
       platform: "macos",
       arch: "arm64",
       format: "dmg",
-      downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/Kyro_0.1.0_aarch64.dmg",
-      description: "Apple Silicon Macs (M1 / M2 / M3 / M4)",
+      downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      description: "Apple Silicon Macs (M1 / M2 / M3 / M4) — In Development",
+      status: "coming-soon",
     },
     {
       name: "Kyro_0.1.0_x64.dmg",
       platform: "macos",
       arch: "x86_64",
       format: "dmg",
-      downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/Kyro_0.1.0_x64.dmg",
-      description: "Intel-based Mac computers",
+      downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      description: "Intel-based Mac computers — In Development",
+      status: "coming-soon",
     },
     {
       name: "Kyro_0.1.0_x64-setup.exe",
       platform: "windows",
       arch: "x86_64",
       format: "exe",
-      downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/Kyro_0.1.0_x64-setup.exe",
-      description: "Windows 10 / 11 64-bit installer",
+      downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      description: "Windows 10 / 11 64-bit installer — In Development",
+      status: "coming-soon",
     },
     {
       name: "Kyro_0.1.0_x64_en-US.msi",
       platform: "windows",
       arch: "x86_64",
       format: "msi",
-      downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/Kyro_0.1.0_x64_en-US.msi",
-      description: "Windows MSI enterprise deployment package",
+      downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      description: "Windows MSI enterprise deployment package — In Development",
+      status: "coming-soon",
     },
     {
       name: "kyro-v0.1.0-source.tar.gz",
@@ -95,7 +102,8 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "all",
       format: "tar.gz",
       downloadUrl: "https://github.com/eshanized/Kyro/archive/refs/tags/v0.1.0.tar.gz",
-      description: "Full repository source code archive",
+      description: "Full repository source code archive (Build on any platform)",
+      status: "available",
     },
   ],
   isFallback: true,
@@ -156,6 +164,9 @@ export async function getLatestRelease(): Promise<ReleaseInfo> {
         arch = "x86_64";
       }
 
+      const status: ReleaseAsset["status"] =
+        platform === "linux" || platform === "source" ? "available" : "coming-soon";
+
       return {
         name,
         platform,
@@ -164,6 +175,7 @@ export async function getLatestRelease(): Promise<ReleaseInfo> {
         downloadUrl: asset.browser_download_url,
         sizeBytes: asset.size,
         description: `Release artifact for ${platform} (${arch})`,
+        status,
       };
     });
 

@@ -30,6 +30,13 @@ export default function InstallationDocPage() {
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
           Follow these instructions to configure system dependencies and compile the Kyro desktop application.
         </p>
+
+        {/* Platform Notice */}
+        <div className="mt-4 rounded-xl border border-border bg-surface p-4 text-xs text-muted-foreground leading-relaxed">
+          <strong className="text-foreground">Platform Status:</strong> Pre-built packages are currently available for
+          Linux distributions (.deb and .AppImage). Official installers for macOS and Windows are coming soon!
+          You can compile and run Kyro from source today on Linux, macOS, or Windows using the instructions below.
+        </div>
       </div>
 
       {/* Minimum Requirements */}
