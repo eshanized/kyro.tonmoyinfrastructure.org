@@ -26,13 +26,18 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { getContributors } from "@/lib/contributors";
+import { getLatestRelease } from "@/lib/releases";
 import { ScreenshotGallery } from "@/components/ScreenshotGallery";
 import { CodeBlock } from "@/components/CodeBlock";
 import { GithubIcon } from "@/components/BrandIcons";
 import { HeroContributors } from "@/components/HeroContributors";
+import { HeroDownloadButton } from "@/components/HeroDownloadButton";
 
 export default async function HomePage() {
-  const contributors = await getContributors();
+  const [contributors, release] = await Promise.all([
+    getContributors(),
+    getLatestRelease(),
+  ]);
   return (
     <div className="flex flex-col gap-20 pb-20 sm:gap-28 sm:pb-28">
       {/* Hero Section */}
@@ -112,13 +117,7 @@ export default async function HomePage() {
 
             {/* Action Buttons */}
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-              <Link
-                href="/download/"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-md shadow-emerald-500/25 active:scale-[0.98]"
-              >
-                <Download className="h-4 w-4" />
-                <span>Download for Free</span>
-              </Link>
+              <HeroDownloadButton initialDownloads={release.totalDownloads} />
 
               <Link
                 href="/features/"
@@ -846,13 +845,11 @@ make dev`}
             A product from Tonmoy Infrastructure, owned by Eshan Roy. Download the desktop client for your platform or inspect the source repository.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="/download/"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20"
-            >
-              <Download className="h-4 w-4" />
-              <span>Get Kyro v{siteConfig.currentVersion}</span>
-            </Link>
+            <HeroDownloadButton
+              initialDownloads={release.totalDownloads}
+              label={`Get Kyro v${siteConfig.currentVersion}`}
+              className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 group"
+            />
             <Link
               href="/docs/"
               className="inline-flex items-center gap-2 rounded-xl border border-border bg-surface px-6 py-3.5 text-sm font-medium text-foreground hover:bg-surface-hover transition-colors"

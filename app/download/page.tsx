@@ -93,6 +93,11 @@ export default async function DownloadPage() {
           </div>
           <span className="text-border">•</span>
           <div>
+            <span className="text-foreground/80 font-sans font-medium">Downloads: </span>
+            <span className="text-emerald-400 font-bold">{release.totalDownloads} total downloads</span>
+          </div>
+          <span className="text-border">•</span>
+          <div>
             <span className="text-foreground/80 font-sans font-medium">License: </span>
             <span>MIT Open Source</span>
           </div>
@@ -138,7 +143,14 @@ export default async function DownloadPage() {
                   </div>
                   <div className="text-[11px] text-muted-foreground">{asset.description}</div>
                 </div>
-                <Download className="h-4 w-4 text-emerald-400 shrink-0 ml-2" />
+                <div className="flex items-center gap-2 shrink-0 ml-2">
+                  {typeof asset.downloadCount === "number" && asset.downloadCount > 0 && (
+                    <span className="text-[10px] font-mono font-medium text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                      {asset.downloadCount} {asset.downloadCount === 1 ? "download" : "downloads"}
+                    </span>
+                  )}
+                  <Download className="h-4 w-4 text-emerald-400" />
+                </div>
               </a>
             ))}
           </div>

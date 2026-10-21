@@ -4,6 +4,7 @@ export interface ReleaseAsset {
   arch: "x86_64" | "arm64" | "universal" | "all";
   format: "deb" | "appimage" | "dmg" | "msi" | "exe" | "tar.gz" | "zip";
   downloadUrl: string;
+  downloadCount?: number;
   sizeBytes?: number;
   description: string;
   status: "available" | "coming-soon";
@@ -19,10 +20,17 @@ export interface ReleaseInfo {
   htmlUrl: string;
   notes: string;
   assets: ReleaseAsset[];
+  totalDownloads: number;
   isFallback?: boolean;
 }
 
-const DEFAULT_FALLBACK_RELEASE: ReleaseInfo = {
+export const GITHUB_RELEASES_API =
+  "https://api.github.com/repos/eshanized/Kyro/releases";
+
+export const GITHUB_LATEST_RELEASE_API =
+  "https://api.github.com/repos/eshanized/Kyro/releases/latest";
+
+export const DEFAULT_FALLBACK_RELEASE: ReleaseInfo = {
   version: "0.1.0",
   tagName: "v0.1.0",
   releaseName: "Kyro v0.1.0 (Initial Desktop Release)",
@@ -30,6 +38,7 @@ const DEFAULT_FALLBACK_RELEASE: ReleaseInfo = {
   isDraft: false,
   isPrerelease: false,
   htmlUrl: "https://github.com/eshanized/Kyro/releases/tag/v0.1.0",
+  totalDownloads: 2,
   notes: `### Kyro v0.1.0 — Local-First Autonomous Desktop AI Agent
 
 This initial release introduces the core Kyro desktop client with multi-threaded Rust native core, Tauri v2, and React 19.
@@ -48,6 +57,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "x86_64",
       format: "deb",
       downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/kyro_0.1.0_amd64.deb",
+      downloadCount: 1,
       description: "Debian, Ubuntu, Linux Mint & derivatives (64-bit)",
       status: "available",
     },
@@ -57,6 +67,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "x86_64",
       format: "appimage",
       downloadUrl: "https://github.com/eshanized/Kyro/releases/download/v0.1.0/kyro_0.1.0_amd64.AppImage",
+      downloadCount: 1,
       description: "Universal standalone Linux executable (Arch, Fedora, openSUSE, etc.)",
       status: "available",
     },
@@ -66,6 +77,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "arm64",
       format: "dmg",
       downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      downloadCount: 0,
       description: "Apple Silicon Macs (M1 / M2 / M3 / M4) — In Development",
       status: "coming-soon",
     },
@@ -75,6 +87,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "x86_64",
       format: "dmg",
       downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      downloadCount: 0,
       description: "Intel-based Mac computers — In Development",
       status: "coming-soon",
     },
@@ -84,6 +97,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "x86_64",
       format: "exe",
       downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      downloadCount: 0,
       description: "Windows 10 / 11 64-bit installer — In Development",
       status: "coming-soon",
     },
@@ -93,6 +107,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "x86_64",
       format: "msi",
       downloadUrl: "https://github.com/eshanized/Kyro/releases",
+      downloadCount: 0,
       description: "Windows MSI enterprise deployment package — In Development",
       status: "coming-soon",
     },
@@ -102,6 +117,7 @@ This initial release introduces the core Kyro desktop client with multi-threaded
       arch: "all",
       format: "tar.gz",
       downloadUrl: "https://github.com/eshanized/Kyro/archive/refs/tags/v0.1.0.tar.gz",
+      downloadCount: 0,
       description: "Full repository source code archive (Build on any platform)",
       status: "available",
     },
@@ -112,9 +128,9 @@ This initial release introduces the core Kyro desktop client with multi-threaded
 export async function getLatestRelease(): Promise<ReleaseInfo> {
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
-    const res = await fetch("https://api.github.com/repos/eshanized/Kyro/releases/latest", {
+    const res = await fetch(GITHUB_LATEST_RELEASE_API, {
       headers: {
         Accept: "application/vnd.github.v3+json",
         "User-Agent": "Kyro-Website-Client",
@@ -134,9 +150,14 @@ export async function getLatestRelease(): Promise<ReleaseInfo> {
       return DEFAULT_FALLBACK_RELEASE;
     }
 
-    const assets: ReleaseAsset[] = (data.assets || []).map((asset: any) => {
+    let calculatedDownloads = 0;
+    const rawAssets = Array.isArray(data.assets) ? data.assets : [];
+
+    const assets: ReleaseAsset[] = rawAssets.map((asset: any) => {
       const name: string = asset.name || "";
       const lower = name.toLowerCase();
+      const count = Number(asset.download_count) || 0;
+      calculatedDownloads += count;
 
       let platform: ReleaseAsset["platform"] = "source";
       let arch: ReleaseAsset["arch"] = "all";
@@ -173,13 +194,13 @@ export async function getLatestRelease(): Promise<ReleaseInfo> {
         arch,
         format,
         downloadUrl: asset.browser_download_url,
+        downloadCount: count,
         sizeBytes: asset.size,
         description: `Release artifact for ${platform} (${arch})`,
         status,
       };
     });
 
-    // If GitHub release exists but has no binary assets yet, attach the fallback assets for complete UX
     const mergedAssets = assets.length > 0 ? assets : DEFAULT_FALLBACK_RELEASE.assets;
 
     return {
@@ -192,6 +213,7 @@ export async function getLatestRelease(): Promise<ReleaseInfo> {
       htmlUrl: data.html_url || "https://github.com/eshanized/Kyro/releases",
       notes: data.body || DEFAULT_FALLBACK_RELEASE.notes,
       assets: mergedAssets,
+      totalDownloads: Math.max(calculatedDownloads, DEFAULT_FALLBACK_RELEASE.totalDownloads),
       isFallback: false,
     };
   } catch (_err) {
