@@ -11,8 +11,13 @@ export const siteConfig = {
   discussionsUrl: "https://github.com/eshanized/Kyro/discussions",
   organization: {
     name: "Tonmoy Infrastructure",
+    fullName: "Tonmoy Infrastructure and Vision",
+    shortName: "TIV",
     url: "https://tonmoyinfrastructure.org/",
     domain: "tonmoyinfrastructure.org",
+    githubOrg: "https://github.com/TIVerse",
+    logo: "/assets/tonmoy-logo.svg",
+    icon: "/assets/tonmoy-icon.svg",
     tagline: "Systems, Infrastructure & Sovereign Computing Lab",
     description:
       "Tonmoy Infrastructure develops sovereign, privacy-preserving infrastructure, distributed systems, and local-first computing tools.",
@@ -22,6 +27,9 @@ export const siteConfig = {
     role: "Owner & Lead Architect",
     email: "m.eshanized@gmail.com",
     github: "https://github.com/eshanized",
+    username: "eshanized",
+    avatar: "https://avatars.githubusercontent.com/u/148610067?v=4",
+    localAvatar: "/assets/owner-github.jpg",
     organization: "Tonmoy Infrastructure",
     orgUrl: "https://tonmoyinfrastructure.org/",
   },
