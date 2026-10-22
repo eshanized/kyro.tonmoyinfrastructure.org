@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { GithubIcon } from "@/components/BrandIcons";
 import { siteConfig } from "@/lib/site-config";
+import { LatestReleaseVersion } from "@/components/LatestReleaseVersion";
 import { getLatestRelease } from "@/lib/releases";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
@@ -85,7 +86,7 @@ export default async function DownloadPage() {
         <div className="mt-6 flex flex-wrap items-center gap-4 text-xs font-mono text-muted-foreground border-y border-border py-3">
           <div>
             <span className="text-foreground/80 font-sans font-medium">Current Version: </span>
-            <span className="text-emerald-400 font-bold">{release.tagName}</span>
+            <LatestReleaseVersion initialTagName={release.tagName} className="text-emerald-400 font-bold" />
           </div>
           <span className="text-border">•</span>
           <div>
@@ -305,7 +306,7 @@ make tauri-build`}
             </p>
           </div>
           <a
-            href={release.htmlUrl}
+            href="https://github.com/eshanized/Kyro/releases/latest"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-400 hover:text-emerald-300 underline underline-offset-2 transition-colors"
