@@ -112,11 +112,14 @@ const siteConfigSource = fs.readFileSync(path.join(rootDir, "lib/site-config.ts"
 const releaseVersionSource = fs.readFileSync(path.join(rootDir, "components/LatestReleaseVersion.tsx"), "utf8");
 const navbarSource = fs.readFileSync(path.join(rootDir, "components/Navbar.tsx"), "utf8");
 const homeSource = fs.readFileSync(path.join(rootDir, "app/page.tsx"), "utf8");
-assert(!siteConfigSource.includes('currentVersion: "0.1.0"'), "The old hardcoded current version has been removed");
+const downloadSource = fs.readFileSync(path.join(rootDir, "app/download/page.tsx"), "utf8");
+assert(!/\bcurrentVersion\s*:/.test(siteConfigSource), "No hardcoded current version remains in site config");
 assert(releaseVersionSource.includes("https://api.github.com/repos/eshanized/Kyro/releases/latest"), "Version component queries the authoritative GitHub latest-release API");
 assert(releaseVersionSource.includes('cache: "no-store"'), "Live version lookup avoids stale browser response caching");
 assert(navbarSource.includes("<LatestReleaseVersion"), "Navigation uses the live release version");
 assert(homeSource.includes("<LatestReleaseVersion") && homeSource.includes("showVersion"), "Homepage version labels and CTA use the live release version");
+assert(downloadSource.includes("<LatestReleaseVersion"), "Download page version display refreshes from GitHub");
+assert(downloadSource.includes("https://github.com/eshanized/Kyro/releases/latest"), "Download page links to the latest release rather than a frozen release URL");
 
 // 5. Verify TypeScript compiler
 console.log("\nExecuting TypeScript type checking (tsc --noEmit)...");
