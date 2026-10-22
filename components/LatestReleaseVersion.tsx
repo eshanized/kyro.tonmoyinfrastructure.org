@@ -28,7 +28,7 @@ async function fetchLatestReleaseTag(): Promise<string> {
     return inFlightRequest;
   }
 
-  inFlightRequest = (async () => {
+  const request = (async () => {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000);
 
@@ -55,11 +55,14 @@ async function fetchLatestReleaseTag(): Promise<string> {
       clearTimeout(timeoutId);
     }
   })();
+  inFlightRequest = request;
 
   try {
-    return await inFlightRequest;
+    return await request;
   } finally {
-    inFlightRequest = null;
+    if (inFlightRequest === request) {
+      inFlightRequest = null;
+    }
   }
 }
 
