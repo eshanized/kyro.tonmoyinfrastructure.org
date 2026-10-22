@@ -123,7 +123,6 @@ export default function RootLayout({
         priceCurrency: "USD",
       },
       description: siteConfig.description,
-      softwareVersion: siteConfig.currentVersion,
       author: {
         "@type": "Person",
         name: siteConfig.owner.name,
