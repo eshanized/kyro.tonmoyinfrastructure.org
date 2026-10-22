@@ -106,7 +106,22 @@ for (const df of dataFiles) {
   assert(fs.existsSync(filePath), `Data file exists: ${df}`);
 }
 
-// 4. Verify TypeScript compiler
+// 4. Verify release version is resolved from GitHub at runtime
+console.log("\nChecking live release version integration...");
+const siteConfigSource = fs.readFileSync(path.join(rootDir, "lib/site-config.ts"), "utf8");
+const releaseVersionSource = fs.readFileSync(path.join(rootDir, "components/LatestReleaseVersion.tsx"), "utf8");
+const navbarSource = fs.readFileSync(path.join(rootDir, "components/Navbar.tsx"), "utf8");
+const homeSource = fs.readFileSync(path.join(rootDir, "app/page.tsx"), "utf8");
+const downloadSource = fs.readFileSync(path.join(rootDir, "app/download/page.tsx"), "utf8");
+assert(!/\bcurrentVersion\s*:/.test(siteConfigSource), "No hardcoded current version remains in site config");
+assert(releaseVersionSource.includes("https://api.github.com/repos/eshanized/Kyro/releases/latest"), "Version component queries the authoritative GitHub latest-release API");
+assert(releaseVersionSource.includes('cache: "no-store"'), "Live version lookup avoids stale browser response caching");
+assert(navbarSource.includes("<LatestReleaseVersion"), "Navigation uses the live release version");
+assert(homeSource.includes("<LatestReleaseVersion") && homeSource.includes("showVersion"), "Homepage version labels and CTA use the live release version");
+assert(downloadSource.includes("<LatestReleaseVersion"), "Download page version display refreshes from GitHub");
+assert(downloadSource.includes("https://github.com/eshanized/Kyro/releases/latest"), "Download page links to the latest release rather than a frozen release URL");
+
+// 5. Verify TypeScript compiler
 console.log("\nExecuting TypeScript type checking (tsc --noEmit)...");
 try {
   execSync("npx tsc --noEmit", { stdio: "inherit" });

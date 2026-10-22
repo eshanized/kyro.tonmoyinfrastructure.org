@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Download } from "lucide-react";
 import { GITHUB_RELEASES_API } from "@/lib/releases";
+import { LatestReleaseVersion } from "@/components/LatestReleaseVersion";
 
 interface HeroDownloadButtonProps {
   initialDownloads?: number;
   className?: string;
   label?: string;
   href?: string;
+  showVersion?: boolean;
+  initialTagName?: string;
 }
 
 const CACHE_KEY = "kyro_downloads_cache_v2";
@@ -20,6 +23,8 @@ export function HeroDownloadButton({
   className,
   label = "Download for Free",
   href = "/download/",
+  showVersion = false,
+  initialTagName,
 }: HeroDownloadButtonProps) {
   const [downloads, setDownloads] = useState<number>(initialDownloads);
 
@@ -107,6 +112,11 @@ export function HeroDownloadButton({
     >
       <Download className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
       <span>{label}</span>
+      {showVersion && (
+        <span className="font-mono text-xs font-bold">
+          <LatestReleaseVersion initialTagName={initialTagName} />
+        </span>
+      )}
       <span
         className="inline-flex items-center rounded-full bg-black/15 px-2 py-0.5 text-[11px] font-bold text-black/95 tracking-tight group-hover:bg-black/20 transition-colors"
         aria-label={`${formattedCount} total downloads`}

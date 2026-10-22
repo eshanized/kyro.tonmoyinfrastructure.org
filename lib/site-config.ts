@@ -40,7 +40,6 @@ export const siteConfig = {
     orgName: "Tonmoy Infrastructure",
     orgUrl: "https://tonmoyinfrastructure.org/",
   },
-  currentVersion: "0.1.0",
   license: "MIT",
   navItems: [
     { label: "Features", href: "/features/" },
