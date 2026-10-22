@@ -106,7 +106,19 @@ for (const df of dataFiles) {
   assert(fs.existsSync(filePath), `Data file exists: ${df}`);
 }
 
-// 4. Verify TypeScript compiler
+// 4. Verify release version is resolved from GitHub at runtime
+console.log("\nChecking live release version integration...");
+const siteConfigSource = fs.readFileSync(path.join(rootDir, "lib/site-config.ts"), "utf8");
+const releaseVersionSource = fs.readFileSync(path.join(rootDir, "components/LatestReleaseVersion.tsx"), "utf8");
+const navbarSource = fs.readFileSync(path.join(rootDir, "components/Navbar.tsx"), "utf8");
+const homeSource = fs.readFileSync(path.join(rootDir, "app/page.tsx"), "utf8");
+assert(!siteConfigSource.includes('currentVersion: "0.1.0"'), "The old hardcoded current version has been removed");
+assert(releaseVersionSource.includes("https://api.github.com/repos/eshanized/Kyro/releases/latest"), "Version component queries the authoritative GitHub latest-release API");
+assert(releaseVersionSource.includes('cache: "no-store"'), "Live version lookup avoids stale browser response caching");
+assert(navbarSource.includes("<LatestReleaseVersion"), "Navigation uses the live release version");
+assert(homeSource.includes("<LatestReleaseVersion") && homeSource.includes("showVersion"), "Homepage version labels and CTA use the live release version");
+
+// 5. Verify TypeScript compiler
 console.log("\nExecuting TypeScript type checking (tsc --noEmit)...");
 try {
   execSync("npx tsc --noEmit", { stdio: "inherit" });
