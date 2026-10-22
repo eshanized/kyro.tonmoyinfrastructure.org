@@ -32,6 +32,7 @@ import { CodeBlock } from "@/components/CodeBlock";
 import { GithubIcon } from "@/components/BrandIcons";
 import { HeroContributors } from "@/components/HeroContributors";
 import { HeroDownloadButton } from "@/components/HeroDownloadButton";
+import { LatestReleaseVersion } from "@/components/LatestReleaseVersion";
 
 export default async function HomePage() {
   const [contributors, release] = await Promise.all([
@@ -78,7 +79,7 @@ export default async function HomePage() {
                 Eshan Roy
               </a>
               <span className="text-emerald-500/40 hidden sm:inline">•</span>
-              <span className="text-emerald-400 font-mono hidden sm:inline">v{siteConfig.currentVersion} MIT</span>
+              <span className="text-emerald-400 font-mono hidden sm:inline"><LatestReleaseVersion initialTagName={release.tagName} /> MIT</span>
             </div>
 
             {/* Main Headline */}
@@ -171,7 +172,7 @@ export default async function HomePage() {
                   <span className="h-3 w-3 rounded-full bg-yellow-500/80 inline-block" />
                   <span className="h-3 w-3 rounded-full bg-green-500/80 inline-block" />
                   <span className="ml-2 font-mono text-[11px] text-muted-foreground hidden sm:inline">
-                    kyro-desktop — everyday_workspace (v0.1.0)
+                    kyro-desktop — everyday_workspace
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -860,7 +861,9 @@ make dev`}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <HeroDownloadButton
               initialDownloads={release.totalDownloads}
-              label={`Get Kyro v${siteConfig.currentVersion}`}
+              label="Get Kyro"
+              showVersion
+              initialTagName={release.tagName}
               className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 px-6 py-3.5 text-sm font-bold text-black hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20 group"
             />
             <Link
