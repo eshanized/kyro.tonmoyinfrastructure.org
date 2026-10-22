@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { Menu, X, Sun, Moon, Download, ChevronRight, ExternalLink, Sparkles, BookOpen } from "lucide-react";
 import { GithubIcon } from "@/components/BrandIcons";
+import { LatestReleaseVersion } from "@/components/LatestReleaseVersion";
 import { siteConfig } from "@/lib/site-config";
 
 // Primary links displayed directly on tablet viewports (768px - 1023px)
@@ -129,7 +130,7 @@ export function Navbar() {
                       Kyro
                     </span>
                     <span className="inline-block rounded-full bg-emerald-500/10 px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[10px] font-mono font-medium text-emerald-400 border border-emerald-500/20">
-                      v{siteConfig.currentVersion}
+                      <LatestReleaseVersion />
                     </span>
                   </div>
                   <span className="hidden xl:inline-block text-[10px] text-muted-foreground font-medium -mt-1 tracking-tight">
@@ -260,7 +261,7 @@ export function Navbar() {
                 <div className="flex items-center gap-1.5">
                   <span className="font-extrabold tracking-tight text-base text-foreground">Kyro</span>
                   <span className="rounded-full bg-emerald-500/10 px-1.5 py-0.2 text-[9px] font-mono font-medium text-emerald-400 border border-emerald-500/20">
-                    v{siteConfig.currentVersion}
+                    <LatestReleaseVersion />
                   </span>
                 </div>
                 <span className="text-[10px] text-muted-foreground font-medium -mt-0.5">
@@ -400,7 +401,7 @@ export function Navbar() {
                 className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg bg-gradient-to-r from-emerald-500 to-emerald-400 text-black font-bold text-center hover:brightness-110 transition-all shadow-sm shadow-emerald-500/20 text-xs sm:text-sm"
               >
                 <Download className="h-4 w-4" />
-                <span>Get Kyro v{siteConfig.currentVersion}</span>
+                <span>Get Kyro <LatestReleaseVersion /></span>
               </Link>
               <Link
                 href={siteConfig.repoUrl}
