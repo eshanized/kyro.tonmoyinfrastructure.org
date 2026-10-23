@@ -236,6 +236,92 @@ export default async function DownloadPage() {
         </div>
       </div>
 
+      {/* System Requirements */}
+      <section id="system-requirements" className="mt-16 scroll-mt-24">
+        <div className="rounded-2xl border border-border bg-card p-6 sm:p-10">
+          <div className="max-w-3xl">
+            <span className="text-xs font-semibold uppercase tracking-wider text-emerald-500">
+              Before You Install
+            </span>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              Kyro System Requirements
+            </h2>
+            <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              These requirements are based on Kyro's Tauri v2 desktop runtime, computer-use dependencies, and current Linux release packaging. They describe the supported runtime environment—not the larger toolchain needed to compile Kyro from source.
+            </p>
+          </div>
+
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <h3 className="text-sm font-semibold text-foreground">Operating system</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground leading-relaxed">
+                <li>• Linux x86_64 is the currently published prebuilt target.</li>
+                <li>• Debian/Ubuntu-family systems can use the .deb package; other distributions can use the matching release artifact, where available.</li>
+                <li>• macOS and Windows native installers are not currently published; see the platform status above.</li>
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <h3 className="text-sm font-semibold text-foreground">Linux runtime libraries</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground leading-relaxed">
+                <li>• WebKit2GTK 4.1 — embedded webview runtime.</li>
+                <li>• libxdo — desktop input/control support.</li>
+                <li>• OpenSSL runtime libraries — secure network connections.</li>
+                <li>• AppIndicator support may be needed for the tray integration.</li>
+              </ul>
+              <p className="mt-3 text-[11px] text-muted-foreground leading-relaxed">
+                Package names vary by distribution. The development packages listed in the installation guide are for building from source, not a checklist that every end user must install.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <h3 className="text-sm font-semibold text-foreground">Desktop session & permissions</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground leading-relaxed">
+                <li>• A graphical desktop session is required for screen capture, keyboard/mouse control, overlays, and the main application window.</li>
+                <li>• Grant desktop or accessibility permissions when your environment requests them.</li>
+                <li>• Browser automation requires a supported browser installed locally (Firefox or a Chromium-family browser).</li>
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-border bg-surface p-5">
+              <h3 className="text-sm font-semibold text-foreground">Connectivity & optional features</h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground leading-relaxed">
+                <li>• Internet access is needed for remote model providers, OAuth sign-in, and remote connectors.</li>
+                <li>• Local storage uses SQLite; Kyro does not require a separate database server.</li>
+                <li>• Docker or Podman is only required when you enable a container-backed sandbox policy; in that mode Kyro fails closed if the configured runtime is unavailable.</li>
+                <li>• Telegram, GitHub/Google connectors, and external MCP services are optional and need their respective accounts or endpoints.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+            <h3 className="text-sm font-semibold text-foreground">Hardware guidance</h3>
+            <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+              Kyro uses native Rust services, local SQLite storage, screen capture, and image processing. A modern 64-bit computer with a working graphics desktop and enough memory to run your chosen model/browser is recommended. The repository does not define a verified minimum CPU, RAM, GPU, or disk-space specification, so we do not publish unsupported numeric minimums.
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="/docs/installation/"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-xs font-semibold text-foreground hover:border-emerald-500/40 transition-colors"
+            >
+              <span>Source-build prerequisites</span>
+              <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+            </Link>
+            <a
+              href="https://github.com/eshanized/Kyro/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-4 py-2.5 text-xs font-semibold text-foreground hover:border-emerald-500/40 transition-colors"
+            >
+              <span>Check release assets</span>
+              <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Building from Source Section */}
       <section className="mt-16">
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-10">
