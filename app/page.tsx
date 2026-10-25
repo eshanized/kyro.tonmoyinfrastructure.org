@@ -140,6 +140,28 @@ export default async function HomePage() {
               </Link>
             </div>
 
+            {/* LaunchBuff featured badge */}
+            <div className="mt-6 flex w-full justify-center">
+              <a
+                href="https://launchbuff.com/products/kyro-npnc71"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Featured on LaunchBuff"
+                className="inline-flex max-w-full items-center justify-center rounded-xl border border-border/70 bg-surface/70 p-2 transition-all hover:border-emerald-500/40 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                aria-label="Featured on LaunchBuff — view Kyro"
+              >
+                <img
+                  src="https://launchbuff.com/badge-featured-dark.svg"
+                  alt="Featured on LaunchBuff"
+                  width="256"
+                  height="80"
+                  loading="lazy"
+                  decoding="async"
+                  className="h-auto w-48 sm:w-64"
+                />
+              </a>
+            </div>
+
             {/* GitHub Contributors */}
             <div className="mt-6 flex justify-center">
               <HeroContributors initialContributors={contributors} />
