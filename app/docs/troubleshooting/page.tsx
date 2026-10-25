@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { AlertTriangle, Wrench, CheckCircle2, HelpCircle } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Troubleshooting & System Diagnostics",
   description:
     "Diagnose and resolve common configuration, keyring, container sandbox, and display issues in Kyro.",
-};
+  path: "/docs/troubleshooting",
+});
 
 export default function TroubleshootingDocPage() {
   return (

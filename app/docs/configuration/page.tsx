@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Key, Cpu, ShieldCheck, CheckCircle2 } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Configuration & Model Providers",
   description:
     "How to configure model credentials, NVIDIA NIM endpoints, OpenAI-compatible APIs, and local LLM servers in Kyro.",
-};
+  path: "/docs/configuration",
+});
 
 export default function ConfigurationDocPage() {
   return (

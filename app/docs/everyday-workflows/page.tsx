@@ -2,12 +2,14 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FolderSync, FileText, ScanEye, CheckCircle2 } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Everyday Workflows & Desktop Tools",
   description:
     "Guide to Kyro's Everyday Mode: safe reversible file organization, local PDF parsing, and screen explainer.",
-};
+  path: "/docs/everyday-workflows",
+});
 
 export default function EverydayWorkflowsDocPage() {
   return (

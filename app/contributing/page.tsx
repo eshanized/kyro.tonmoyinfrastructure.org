@@ -5,12 +5,14 @@ import { CodeBlock } from "@/components/CodeBlock";
 import { GitPullRequest, CheckCircle2, Terminal, BookOpen, Bug, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/BrandIcons";
 import { siteConfig } from "@/lib/site-config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Contributing to Kyro",
   description:
     "Developer guide for contributing to Kyro: local setup, Makefile targets, verification pipeline, commit conventions, and pull request checklist.",
-};
+  path: "/contributing",
+});
 
 export default function ContributingPage() {
   return (

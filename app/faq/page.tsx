@@ -5,12 +5,14 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { faqItems } from "@/lib/faq-data";
 import { HelpCircle, Mail, MessageSquare } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Frequently Asked Questions (FAQ)",
   description:
-    "Comprehensive verified answers to common questions about Kyro: local-first privacy, model endpoints, browser automation, Docker sandboxing, and operating system support.",
-};
+    "Verified answers about Kyro: local-first privacy, model endpoints, browser automation, Docker sandboxing, and desktop operating system support.",
+  path: "/faq",
+});
 
 export default function FaqPage() {
   return (

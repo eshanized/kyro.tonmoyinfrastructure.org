@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Eye, MousePointer, Monitor, Crosshair } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Computer Use & Visual Grounding",
   description:
     "How Kyro performs screen capture with xcap, Set-of-Marks visual tagging, native input synthesis with enigo, and Ghost Mode isolation.",
-};
+  path: "/docs/computer-use",
+});
 
 export default function ComputerUseDocPage() {
   return (

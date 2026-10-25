@@ -126,20 +126,20 @@ export function FaqAccordion({ items, showCategoryFilter = true }: FaqAccordionP
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div
-                    id={`faq-answer-${item.id}`}
-                    role="region"
-                    className="border-t border-border/60 bg-surface/40 px-5 py-4 text-xs sm:text-sm text-muted-foreground leading-relaxed animate-fade-in"
-                  >
-                    <p>{item.answer}</p>
-                    <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground/80">
-                      <span className="font-mono text-emerald-500/90 font-medium">
-                        Category: {item.category}
-                      </span>
-                    </div>
+                <div
+                  id={`faq-answer-${item.id}`}
+                  role="region"
+                  className={`border-t border-border/60 bg-surface/40 px-5 py-4 text-xs sm:text-sm text-muted-foreground leading-relaxed ${
+                    isOpen ? "block animate-fade-in" : "hidden"
+                  }`}
+                >
+                  <p>{item.answer}</p>
+                  <div className="mt-3 flex items-center justify-between text-[11px] text-muted-foreground/80">
+                    <span className="font-mono text-emerald-500/90 font-medium">
+                      Category: {item.category}
+                    </span>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

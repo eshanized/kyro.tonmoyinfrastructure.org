@@ -3,12 +3,14 @@ import Link from "next/link";
 import { CheckCircle2, AlertCircle, ArrowRight, BookOpen, Layers } from "lucide-react";
 import { useCasesData } from "@/lib/use-cases-data";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Workflows & Use Cases",
   description:
-    "Discover verified workflows for everyday desktop automation, safe file organization, document analysis, browser visual regression, and multi-agent Git engineering in Kyro.",
-};
+    "Workflows for everyday desktop automation, safe file organization, document analysis, browser visual regression, and multi-agent Git engineering in Kyro.",
+  path: "/use-cases",
+});
 
 export default function UseCasesPage() {
   const everydayCases = useCasesData.filter((u) => u.targetAudience === "Everyday Users");

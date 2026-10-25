@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { AlertTriangle, FileText } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Terms of Use & License Terms",
   description:
     "Terms of use and open-source licensing terms governing the Kyro website and desktop software.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (
@@ -32,6 +34,11 @@ export default function TermsPage() {
         <div>
           <span className="font-semibold text-foreground">Notice: </span>
           This document describes the terms governing access to this website and the open-source software provided under the MIT License.
+          For details on local data handling and zero-telemetry commitments, see our{" "}
+          <Link href="/privacy/" className="text-emerald-400 font-semibold underline hover:text-emerald-300">
+            Privacy Policy
+          </Link>
+          .
         </div>
       </div>
 

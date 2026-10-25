@@ -4,12 +4,14 @@ import { ArrowRight, BookOpen, Cpu, Shield, Terminal, Globe, Workflow } from "lu
 import { siteConfig } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Documentation Overview",
   description:
     "Comprehensive guides and technical documentation for the Kyro local-first autonomous desktop AI agent.",
-};
+  path: "/docs",
+});
 
 export default function DocsHomePage() {
   return (

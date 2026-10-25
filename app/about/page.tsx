@@ -28,18 +28,14 @@ import {
 } from "lucide-react";
 import { GithubIcon, TonmoyLogo, TonmoyIcon } from "@/components/BrandIcons";
 import { OwnerAvatar } from "@/components/OwnerAvatar";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "About Kyro — Product of Tonmoy Infrastructure, Owned by Eshan Roy",
+export const metadata: Metadata = createPageMetadata({
+  title: "About Kyro — Mission, Architecture & Governance",
   description:
-    "The mission, origins, ownership, and architectural philosophy of Kyro, an open-source local-first autonomous desktop AI agent from Tonmoy Infrastructure, owned and architected by Eshan Roy.",
-  openGraph: {
-    title: "About Kyro — Product of Tonmoy Infrastructure, Owned by Eshan Roy",
-    description:
-      "Explore the mission, architectural tenets, ownership, and parent organization behind Kyro, the sovereign local-first autonomous AI agent.",
-    url: "https://kyro.tonmoyinfrastructure.org/about/",
-  },
-};
+    "Mission, origin, and architectural philosophy of Kyro, an open-source local-first autonomous desktop AI agent from Tonmoy Infrastructure, owned by Eshan Roy.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

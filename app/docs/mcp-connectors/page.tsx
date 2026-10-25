@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Radio, Shield, Key, ExternalLink } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Model Context Protocol & App Connectors",
   description:
     "How Kyro integrates with local and remote Model Context Protocol (MCP) servers and GitHub OAuth PKCE.",
-};
+  path: "/docs/mcp-connectors",
+});
 
 export default function McpConnectorsDocPage() {
   return (

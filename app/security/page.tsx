@@ -17,12 +17,14 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Zero-Trust Security & Governance Boundaries",
   description:
-    "Authoritative specification of Kyro's security architecture: centralized Rust policy evaluation, fail-closed container sandboxing, OS Keyring vault, and human-in-the-loop takeover.",
-};
+    "Kyro security architecture: centralized Rust policy evaluation, fail-closed container sandboxing, OS Keyring vault, and human-in-the-loop takeover control.",
+  path: "/security",
+});
 
 export default function SecurityPage() {
   return (
@@ -168,7 +170,11 @@ export default function SecurityPage() {
           </div>
 
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            Unlike simple string execution, Kyro's authorization engine runs a lexical parser on shell commands,
+            Unlike simple string execution, Kyro&apos;s{" "}
+            <Link href="/docs/security/" className="text-emerald-400 font-semibold underline hover:text-emerald-300">
+              authorization engine
+            </Link>{" "}
+            runs a lexical parser on shell commands,
             extracting exact <code className="text-foreground">argv</code> tokens. The engine rejects:
           </p>
 

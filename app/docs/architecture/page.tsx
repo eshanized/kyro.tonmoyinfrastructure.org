@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Layers, Cpu, Database, Shield, Radio, Terminal } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Runtime Architecture & System Topology",
   description:
     "High-level system topology, Tauri IPC communication, SQLite WAL persistence, and agent execution loop in Kyro.",
-};
+  path: "/docs/architecture",
+});
 
 export default function ArchitectureDocPage() {
   return (

@@ -4,12 +4,14 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { changelogEntries } from "@/lib/changelog-data";
 import { siteConfig } from "@/lib/site-config";
 import { GitCommit, Tag, ExternalLink, Calendar, CheckCircle2 } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Changelog & Release Notes",
   description:
     "Authoritative history of Kyro releases, architectural milestones, and verified git commit updates.",
-};
+  path: "/changelog",
+});
 
 export default function ChangelogPage() {
   return (

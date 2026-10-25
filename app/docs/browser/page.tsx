@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Globe, Shield, Camera, Laptop } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Browser Automation & Web Audits",
   description:
     "How Kyro conducts provider-neutral browser automation via Firefox WebDriver BiDi and Chromium CDP with origin safety.",
-};
+  path: "/docs/browser",
+});
 
 export default function BrowserDocPage() {
   return (

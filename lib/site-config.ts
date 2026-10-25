@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Kyro",
   tagline: "Local-First Autonomous Desktop AI Agent",
   description:
-    "Kyro is an open-source, local-first autonomous desktop AI agent built with Tauri v2, Rust native core, and React 19. A product from Tonmoy Infrastructure, owned and architected by Eshan Roy.",
+    "Kyro is an open-source, local-first autonomous desktop AI agent built with Tauri v2, Rust native core, and React 19 from Tonmoy Infrastructure, by Eshan Roy.",
   url: "https://kyro.tonmoyinfrastructure.org",
   ogImage: "https://kyro.tonmoyinfrastructure.org/assets/screenshot_1.png",
   repoUrl: "https://github.com/eshanized/Kyro",

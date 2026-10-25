@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Clock, Send, ShieldCheck, Repeat } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Routines, Scheduler & Telegram Bridge",
   description:
     "Record desktop demonstrations into parameterized skills, schedule cron routines, and manage tasks remotely via Telegram in Kyro.",
-};
+  path: "/docs/routines-telegram",
+});
 
 export default function RoutinesTelegramDocPage() {
   return (

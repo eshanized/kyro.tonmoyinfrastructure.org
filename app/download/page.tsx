@@ -18,12 +18,14 @@ import { getLatestRelease } from "@/lib/releases";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { MarkdownRenderer } from "@/components/MarkdownRenderer";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Download Kyro Desktop Client",
   description:
     "Download official Kyro installers for Linux (deb, AppImage), macOS (Apple Silicon, Intel dmg), and Windows (msi, exe), or build from source with Cargo and npm.",
-};
+  path: "/download",
+});
 
 export default async function DownloadPage() {
   const release = await getLatestRelease();

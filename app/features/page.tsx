@@ -22,12 +22,14 @@ import {
 import { siteConfig } from "@/lib/site-config";
 import { featureCatalog } from "@/lib/feature-catalog";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Features & Verified Capabilities",
   description:
-    "Explore the complete verified capabilities of Kyro, from dual experience modes and reversible file organization to developer workbenches, visual regression audits, and fail-closed security.",
-};
+    "Verified capabilities of Kyro: dual experience modes, reversible file organization, developer workbench, visual regression audits, and fail-closed security.",
+  path: "/features",
+});
 
 export default function FeaturesPage() {
   const categories = Array.from(new Set(featureCatalog.map((f) => f.category)));

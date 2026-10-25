@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ShieldCheck, Lock, AlertTriangle } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Privacy Policy",
   description:
     "Transparent privacy policy for Kyro website visitors and desktop application users: local-first storage, zero tracking, and direct provider communication.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (
@@ -32,7 +34,11 @@ export default function PrivacyPage() {
         <div>
           <span className="font-semibold text-foreground">Notice: </span>
           This document describes the technical data handling practices of the Kyro website and the open-source Kyro desktop software.
-          It is provided for informational clarity and should be reviewed by legal counsel if customized for commercial operations.
+          For software licensing and usage conditions, please review the{" "}
+          <Link href="/terms/" className="text-emerald-400 font-semibold underline hover:text-emerald-300">
+            Terms of Use
+          </Link>
+          . It is provided for informational clarity and should be reviewed by legal counsel if customized for commercial operations.
         </div>
       </div>
 

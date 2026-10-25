@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Terminal, GitBranch, Bot, Wrench, Play } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Developer Workbench Documentation",
   description:
     "How Kyro manages development servers, git-aware code checkpoints, Build Doctor triage, and isolated multi-agent worktrees.",
-};
+  path: "/docs/developer-workbench",
+});
 
 export default function DeveloperWorkbenchDocPage() {
   return (

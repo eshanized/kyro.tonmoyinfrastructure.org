@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { Shield, Lock, AlertTriangle, CheckCircle2 } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Security & Governance Documentation",
   description:
     "In-depth guide to Kyro's centralized authorization engine, shell policies, fail-closed sandboxing, and workspace confinement.",
-};
+  path: "/docs/security",
+});
 
 export default function SecurityDocPage() {
   return (
@@ -28,7 +30,11 @@ export default function SecurityDocPage() {
           Zero-Trust Security & Authorization
         </h1>
         <p className="mt-4 text-base text-muted-foreground leading-relaxed">
-          Kyro implements a zero-trust policy matrix at the native execution boundary. This document covers
+          Kyro implements a{" "}
+          <Link href="/security/" className="text-emerald-400 font-semibold underline hover:text-emerald-300">
+            zero-trust policy matrix
+          </Link>{" "}
+          at the native execution boundary. This document covers
           policy modes, shell lexical analysis, fail-closed container isolation, and atomic approval consumption.
         </p>
       </div>

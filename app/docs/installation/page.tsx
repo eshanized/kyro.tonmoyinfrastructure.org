@@ -3,12 +3,14 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CodeBlock } from "@/components/CodeBlock";
 import { CheckCircle2, AlertCircle } from "lucide-react";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Installation & System Prerequisites",
   description:
     "System dependencies and compilation instructions for setting up Kyro on Linux, macOS, and Windows.",
-};
+  path: "/docs/installation",
+});
 
 export default function InstallationDocPage() {
   return (
@@ -33,7 +35,11 @@ export default function InstallationDocPage() {
 
         {/* Platform Notice */}
         <div className="mt-4 rounded-xl border border-border bg-surface p-4 text-xs text-muted-foreground leading-relaxed">
-          <strong className="text-foreground">Platform Status:</strong> Pre-built packages are currently available for
+          <strong className="text-foreground">Platform Status:</strong>{" "}
+          <Link href="/download/" className="text-emerald-400 font-semibold underline hover:text-emerald-300">
+            Pre-built packages
+          </Link>{" "}
+          are currently available for
           Linux distributions (.deb and .AppImage). Official installers for macOS and Windows are coming soon!
           You can compile and run Kyro from source today on Linux, macOS, or Windows using the instructions below.
         </div>
