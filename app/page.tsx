@@ -162,6 +162,28 @@ export default async function HomePage() {
               </a>
             </div>
 
+            {/* ToolPotion Top Ranked badge */}
+            <div className="mt-3 flex w-full justify-center">
+              <a
+                href="https://toolpotion.ai/en/ai-apps/kyro?utm_source=toolpotion&amp;utm_medium=badge&amp;utm_campaign=top-ranked"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Kyro — Top Ranked on ToolPotion.ai"
+                className="inline-flex max-w-full items-center justify-center rounded-xl border border-border/70 bg-surface/70 p-2 transition-all hover:border-emerald-500/40 hover:bg-surface focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+                aria-label="Kyro — Top Ranked on ToolPotion.ai"
+              >
+                <img
+                  src="https://toolpotion.ai/badge/32849/top-ranked-detailed-gradient.svg"
+                  alt="Kyro — Top Ranked on ToolPotion.ai"
+                  width={250}
+                  height={54}
+                  style={{ maxWidth: "100%", height: "auto" }}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>
+
             {/* GitHub Contributors */}
             <div className="mt-6 flex justify-center">
               <HeroContributors initialContributors={contributors} />
